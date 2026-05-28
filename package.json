@@ -1,0 +1,67 @@
+{
+  "name": "mui-adapter-js-joda",
+  "version": "0.1.0",
+  "description": "MUI-X date pickers adapter for js-joda.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "peerDependencies": {
+    "@js-joda/core": "^6.0.0",
+    "@js-joda/locale": "^5.0.0",
+    "@js-joda/locale_en-us": "^5.0.0",
+    "@mui/x-date-pickers": "^9.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@js-joda/locale_en-us": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@js-joda/core": "^6.0.1",
+    "@js-joda/locale": "^5.1.0",
+    "@js-joda/locale_en-us": "^5.1.0",
+    "@js-joda/locale_fr": "^5.1.0",
+    "@js-joda/timezone": "^2.25.1",
+    "@mui/x-date-pickers": "^9.3.0",
+    "@types/node": "^22.10.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11",
+    "vite-plugin-dts": "^4.3.0",
+    "vitest": "^2.1.8"
+  },
+  "keywords": [
+    "mui",
+    "mui-x",
+    "date-pickers",
+    "adapter",
+    "js-joda",
+    "joda",
+    "date"
+  ]
+}
