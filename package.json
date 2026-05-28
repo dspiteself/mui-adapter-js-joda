@@ -3,6 +3,15 @@
   "version": "0.1.0",
   "description": "MUI-X date pickers adapter for js-joda.",
   "license": "BSD-3-Clause",
+  "author": "Tyler Tallman",
+  "homepage": "https://github.com/dspiteself/mui-adapter-js-joda#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dspiteself/mui-adapter-js-joda.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dspiteself/mui-adapter-js-joda/issues"
+  },
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -16,7 +25,8 @@
   },
   "files": [
     "dist",
-    "src",
+    "src/index.ts",
+    "src/muiAdapterJoda.ts",
     "README.md",
     "LICENSE"
   ],
