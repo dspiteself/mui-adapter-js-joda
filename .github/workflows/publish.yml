@@ -25,7 +25,10 @@ jobs:
         with:
           node-version: '22'
           cache: pnpm
-          registry-url: 'https://registry.npmjs.org'
+          # NOTE: deliberately not setting `registry-url`. That option makes
+          # setup-node write `.npmrc` with `_authToken=${NODE_AUTH_TOKEN}` and
+          # injects a placeholder token, which then short-circuits Trusted
+          # Publishing's OIDC exchange and 404s with an auth error.
 
       # Trusted Publishing needs the OIDC-aware npm CLI; Node 22 ships with
       # npm 10.x which predates it. Pinning to a known-good range.
