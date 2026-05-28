@@ -27,6 +27,10 @@ jobs:
           cache: pnpm
           registry-url: 'https://registry.npmjs.org'
 
+      # Trusted Publishing needs the OIDC-aware npm CLI; Node 22 ships with
+      # npm 10.x which predates it. Pinning to a known-good range.
+      - run: npm install -g npm@^11.5.1
+
       - run: pnpm install --frozen-lockfile
 
       - name: Verify tag matches package.json version
@@ -46,7 +50,9 @@ jobs:
       - run: pnpm test
       - run: pnpm build
 
+      # No token needed — Trusted Publishing exchanges the GitHub OIDC token
+      # (available because `id-token: write` is granted above) for a short-
+      # lived npm publish token. Requires a trusted publisher to be configured
+      # for this package on npmjs.com pointing at this repo + workflow file.
       - name: Publish to npm
         run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
