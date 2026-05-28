@@ -58,8 +58,12 @@ pnpm build       # vite build -> dist/
 
 ## License
 
-MIT. Includes code derived from [`@date-io/js-joda`][date-io] (© 2017 Dmitriy
-Kovalenko, MIT).
+BSD-3-Clause, matching upstream js-joda. Incorporates portions of
+[`@date-io/js-joda`][date-io] (© 2017 Dmitriy Kovalenko, MIT) and ported test
+infrastructure from [MUI X][mui-x] (© 2019 Material-UI SAS, MIT). See
+[LICENSE](./LICENSE) for the full notices.
+
+[mui-x]: https://github.com/mui/mui-x
 
 [mui-x-date-pickers]: https://mui.com/x/react-date-pickers/
 [js-joda]: https://js-joda.github.io/js-joda/
