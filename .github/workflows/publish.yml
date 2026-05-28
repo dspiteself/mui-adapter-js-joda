@@ -53,18 +53,9 @@ jobs:
       - run: pnpm test
       - run: pnpm build
 
-      - name: Diagnose publish environment
-        run: |
-          echo "npm:  $(npm --version)"
-          echo "node: $(node --version)"
-          echo "ACTIONS_ID_TOKEN_REQUEST_URL:   ${ACTIONS_ID_TOKEN_REQUEST_URL:+set}"
-          echo "ACTIONS_ID_TOKEN_REQUEST_TOKEN: ${ACTIONS_ID_TOKEN_REQUEST_TOKEN:+set}"
-          echo "--- npm config (effective) ---"
-          npm config ls -l 2>&1 | grep -E 'registry|provenance|auth' || true
-
       # No token needed — Trusted Publishing exchanges the GitHub OIDC token
       # (available because `id-token: write` is granted above) for a short-
       # lived npm publish token. Requires a trusted publisher to be configured
       # for this package on npmjs.com pointing at this repo + workflow file.
       - name: Publish to npm
-        run: npm publish --provenance --access public --loglevel=verbose
+        run: npm publish --provenance --access public
